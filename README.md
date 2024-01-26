@@ -22,7 +22,12 @@ Installation via [Lazy.nvim](https://github.com/folke/lazy.nvim):
   dependencies = {
     "rcarriga/nvim-notify", -- required for display
   },
-  lazy = true
+  lazy = true,
+  config = function()
+    require("askRyu").setup({
+      -- custom config options go here --
+    })
+  end
 }
 
 -- or to load only on keymap:
@@ -33,9 +38,30 @@ Installation via [Lazy.nvim](https://github.com/folke/lazy.nvim):
   },
   keys = {
     {"<leader>ar", ":AskRyu<CR>", desc = "Ask Ryu"}
-  }
+  },
+  config = function()
+    require("askRyu").setup({
+      -- custom config options go here --
+    })
+  end
 }
 ```
+
+## 🛠️ Configuration
+```lua
+-- Default Configuration --
+local default = {
+  title = "Ryu says...", -- title bar content
+  icon = "🥋", -- other icons to use { "🥋", "💨", "✊", "💪", "🦵" }
+  render = "default", -- other render opts { "minimal", "simple", "compact" }
+  timeout = 2500, -- in ms (default = 5000)
+  ---------------------------------------------
+  -- see nvim-notify docs for full opts list --
+  ---------------------------------------------
+}
+```
+See [nvim-notify](https://github.com/rcarriga/nvim-notify) docs for full list of
+configuration options
 
 ## ✨ Usage
 ```

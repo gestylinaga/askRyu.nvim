@@ -1,4 +1,4 @@
-# askRyu 💪 🥋
+# 🥋 askRyu
 NeoVim plugin proof of concept
 
 Displays a random Ryu quote.
@@ -50,7 +50,7 @@ Installation via [Lazy.nvim](https://github.com/folke/lazy.nvim):
 ## 🛠️ Configuration
 ```lua
 -- Default Configuration --
-local default = {
+require("askRyu").setup({
   title = "Ryu says...", -- title bar content
   icon = "🥋", -- other icons to use { "🥋", "💨", "✊", "💪", "🦵" }
   render = "default", -- other render opts { "minimal", "simple", "compact" }
@@ -58,7 +58,7 @@ local default = {
   ---------------------------------------------
   -- see nvim-notify docs for full opts list --
   ---------------------------------------------
-}
+})
 ```
 See [nvim-notify](https://github.com/rcarriga/nvim-notify) docs for full list of
 configuration options
